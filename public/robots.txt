@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Once your GitHub Pages domain is live, uncomment and update the sitemap URL:
+# Sitemap: https://<github-org>.github.io/sitemap.xml
