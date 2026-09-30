@@ -63,7 +63,7 @@ export function Roadmap() {
         <Reveal>
           <SectionHeading
             eyebrow="Roadmap"
-            title="Where Tradient is headed"
+            title="Where Nexfin is headed"
             description="Directional areas of work — not dated commitments. The roadmap evolves in the open as contributors join and the research matures."
           />
         </Reveal>

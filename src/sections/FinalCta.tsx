@@ -35,7 +35,7 @@ export function FinalCta() {
                   size="lg"
                   iconRight={<IconArrowRight className="h-4 w-4" />}
                 >
-                  Join Tradient
+                  Join Nexfin
                 </ButtonLink>
                 <ButtonLink
                   href={GITHUB_URL}

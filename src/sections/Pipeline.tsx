@@ -4,7 +4,7 @@ import { Reveal } from '../components/Reveal'
 import { SectionHeading } from '../components/SectionHeading'
 import { Tag } from '../components/Tag'
 
-/** The core Tradient workflow, exactly as the product is conceived. */
+/** The core Nexfin workflow, exactly as the product is conceived. */
 const FLOW = ['On-Chain Data', 'AI Agents', 'Signal Discovery', 'Strategy', 'Execution']
 
 interface Step {
@@ -45,7 +45,7 @@ export function Pipeline() {
           <SectionHeading
             eyebrow="Product Concept"
             title="From raw on-chain data to autonomous execution"
-            description="Tradient connects autonomous agents across the full research-to-trading loop. Every stage is modular and inspectable — designed so contributors can extend any layer of the pipeline."
+            description="Nexfin connects autonomous agents across the full research-to-trading loop. Every stage is modular and inspectable — designed so contributors can extend any layer of the pipeline."
           />
         </Reveal>
 

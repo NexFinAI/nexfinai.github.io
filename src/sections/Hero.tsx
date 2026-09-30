@@ -36,7 +36,7 @@ export function Hero() {
                 crypto strategies.
               </p>
               <p className="mt-3 max-w-lg text-pretty text-[0.95rem] leading-relaxed text-mist">
-                Tradient is an open-source research platform for autonomous, data-driven trading —
+                Nexfin is an open-source research platform for autonomous, data-driven trading —
                 built in public from day one.
               </p>
             </Reveal>
@@ -44,7 +44,7 @@ export function Hero() {
             <Reveal delay={240}>
               <div className="mt-9 flex flex-wrap items-center gap-3">
                 <ButtonLink href="#product" size="lg" iconRight={<IconArrowRight className="h-4 w-4" />}>
-                  Explore Tradient
+                  Explore Nexfin
                 </ButtonLink>
                 <ButtonLink
                   href={GITHUB_URL}

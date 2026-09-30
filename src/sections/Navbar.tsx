@@ -68,7 +68,7 @@ export function Navbar() {
         aria-label="Main"
         className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 md:h-[72px] md:px-8"
       >
-        <a href="#top" className="flex items-center gap-2.5" aria-label="Tradient — back to top">
+        <a href="#top" className="flex items-center gap-2.5" aria-label="Nexfin — back to top">
           <LogoMark className="h-7 w-7" />
           <Wordmark />
         </a>

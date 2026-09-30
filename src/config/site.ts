@@ -1,6 +1,6 @@
 /**
  * ------------------------------------------------------------------
- * Tradient — central site configuration
+ * Nexfin — central site configuration
  * ------------------------------------------------------------------
  * This is the ONLY file you need to edit for links and branding.
  *
@@ -13,7 +13,7 @@
 export const GITHUB_ORG = 'your-org'
 
 /** Main product repository name. */
-export const GITHUB_REPO = 'tradient'
+export const GITHUB_REPO = 'nexfin'
 
 /** Main GitHub repository URL (navbar, hero, footer, CTAs). */
 export const GITHUB_URL = `https://github.com/${GITHUB_ORG}/${GITHUB_REPO}`
@@ -33,7 +33,7 @@ export const DOCS_URL = `${GITHUB_URL}#readme`
  * X / Twitter profile URL.
  * Leave as an empty string until the account exists — the footer will
  * render a disabled "coming soon" state instead of a dead link.
- * TODO: e.g. 'https://x.com/tradient'
+ * TODO: e.g. 'https://x.com/nexfin'
  */
 export const X_URL = ''
 
@@ -47,7 +47,7 @@ export const CONTACT_URL = ''
 
 /* ---------------- Branding ---------------- */
 
-export const SITE_NAME = 'Tradient'
+export const SITE_NAME = 'Nexfin'
 
 export const SITE_TAGLINE = 'Autonomous Intelligence for On-Chain Markets'
 

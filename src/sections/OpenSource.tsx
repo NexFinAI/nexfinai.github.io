@@ -40,8 +40,8 @@ export function OpenSource() {
             <Reveal>
               <SectionHeading
                 eyebrow="Open Source"
-                title="Build Tradient With Us"
-                description="Tradient is currently led by a solo founder and is growing toward a small open-source team of 2–5 contributors."
+                title="Build Nexfin With Us"
+                description="Nexfin is currently led by a solo founder and is growing toward a small open-source team of 2–5 contributors."
               />
             </Reveal>
 

@@ -1,7 +1,7 @@
 import { cx } from '../lib/cx'
 
 /**
- * Minimal stroke-icon set drawn for Tradient.
+ * Minimal stroke-icon set drawn for Nexfin.
  * All icons inherit color via `currentColor` and size via className.
  */
 

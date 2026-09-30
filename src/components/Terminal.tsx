@@ -34,7 +34,7 @@ export function Terminal() {
         <span aria-hidden className="h-2.5 w-2.5 rounded-full bg-white/12" />
         <span aria-hidden className="h-2.5 w-2.5 rounded-full bg-white/12" />
         <span className="ml-2 font-mono text-[11px] text-mist">
-          contributor@tradient — getting started
+          contributor@nexfin — getting started
         </span>
       </div>
 

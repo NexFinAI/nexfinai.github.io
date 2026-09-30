@@ -107,7 +107,7 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
           {/* Brand */}
           <div>
-            <a href="#top" className="flex items-center gap-2.5" aria-label="Tradient — back to top">
+            <a href="#top" className="flex items-center gap-2.5" aria-label="Nexfin — back to top">
               <LogoMark className="h-7 w-7" />
               <Wordmark />
             </a>
@@ -133,7 +133,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col gap-3 border-t border-edge/60 pt-6 md:flex-row md:items-center md:justify-between">
-          <p className="text-[11.5px] text-mist">© {year} Tradient. Built in the open.</p>
+          <p className="text-[11.5px] text-mist">© {year} Nexfin. Built in the open.</p>
           <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-mist/70">
             Early-stage project · Not financial advice · No performance claims
           </p>

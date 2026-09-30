@@ -1,7 +1,7 @@
 /**
  * FIG. 01 — Autonomous Agent Mesh (conceptual).
  *
- * A pure-SVG, dependency-free visualization of Tradient's core idea:
+ * A pure-SVG, dependency-free visualization of Nexfin's core idea:
  * on-chain data sources feed an agent core; research / signal / strategy
  * agents orbit it; discovered signals flow to an output panel; and the
  * (roadmap) execution layer is drawn in dashed amber — visually honest
@@ -18,7 +18,7 @@ export function HeroVisual() {
         role="img"
         aria-labelledby="hv-title hv-desc"
       >
-        <title id="hv-title">Tradient agent mesh</title>
+        <title id="hv-title">Nexfin agent mesh</title>
         <desc id="hv-desc">
           Conceptual diagram: on-chain data sources — chains, markets and events — flow into an
           agent core surrounded by research, signal and strategy agents. Discovered signals feed an

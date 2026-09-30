@@ -1,6 +1,6 @@
-# Tradient — Landing Page
+# Nexfin — Landing Page
 
-Static landing page for **Tradient**: autonomous AI agents that research on-chain markets,
+Static landing page for **Nexfin**: autonomous AI agents that research on-chain markets,
 discover trading signals, and execute crypto strategies.
 
 Built for deployment to **GitHub Pages** at `https://<github-org>.github.io/` — no backend,
@@ -63,7 +63,7 @@ Search-and-replace `your-org` in **two files** (marked with `TODO(deploy)` comme
 # from the project root
 git init -b main
 git add .
-git commit -m "Tradient landing page"
+git commit -m "Nexfin landing page"
 
 # create an EMPTY repo named <github-org>.github.io on GitHub first, then:
 git remote add origin https://github.com/<github-org>/<github-org>.github.io.git
@@ -123,10 +123,10 @@ is used for eyebrows, labels, IDs, and terminal UI; Inter for everything else.
 ## Project structure
 
 ```text
-tradient-landing/
+nexfin-landing/
 ├── .github/workflows/deploy.yml   # CI: build + deploy to GitHub Pages on push to main
 ├── public/
-│   ├── favicon.svg                # Tradient mark (vector)
+│   ├── favicon.svg                # Nexfin mark (vector)
 │   ├── apple-touch-icon.png       # 180×180 iOS icon
 │   ├── og-image.png               # 1200×630 social share card
 │   └── robots.txt
@@ -153,7 +153,7 @@ tradient-landing/
 
 ## Content policy (honesty)
 
-The copy deliberately reflects Tradient's real stage and contains **no fabricated**
+The copy deliberately reflects Nexfin's real stage and contains **no fabricated**
 users, performance numbers, backtest results, funding, partners, or team claims:
 
 - Execution is consistently marked **roadmap** (amber, dashed) everywhere it appears.

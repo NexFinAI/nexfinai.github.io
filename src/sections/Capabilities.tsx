@@ -28,7 +28,7 @@ const TAG_META: Record<CapabilityTag, { label: string; tone: TagTone }> = {
 }
 
 /**
- * Honest capability map: what Tradient is built to do today (core),
+ * Honest capability map: what Nexfin is built to do today (core),
  * what is being built next (roadmap), and how it is built (community).
  */
 const CAPABILITIES: Capability[] = [
@@ -64,7 +64,7 @@ const CAPABILITIES: Capability[] = [
   },
   {
     title: 'Open by Default',
-    body: 'The agent framework, research tooling, and documentation are designed for contributors from day one. Tradient is built in public.',
+    body: 'The agent framework, research tooling, and documentation are designed for contributors from day one. Nexfin is built in public.',
     tag: 'community',
     icon: IconFork,
   },
@@ -77,7 +77,7 @@ export function Capabilities() {
         <Reveal>
           <SectionHeading
             eyebrow="Capabilities"
-            title="What Tradient is built to do"
+            title="What Nexfin is built to do"
             description="A research-first platform: agents do the reading, measuring, and hypothesizing, so strategies are grounded in evidence rather than noise."
           />
         </Reveal>

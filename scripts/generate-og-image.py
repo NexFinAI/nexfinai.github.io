@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate Tradient brand images into public/:
+Generate Nexfin brand images into public/:
 
   - og-image.png          (1200x630 — Open Graph / Twitter card)
   - apple-touch-icon.png  (180x180)
@@ -135,12 +135,13 @@ def og_image() -> None:
         if accent:
             d.ellipse([x - 12, y - 12, x + 12, y + 12], outline=(*SIGNAL, 80), width=2)
 
-    # Tradient mark (top left)
-    rounded_line(d, (96, 96), (164, 96), (*WHITE, 255), 9)
-    d.ellipse([158, 90, 170, 102], fill=(*SIGNAL, 255))
-    rounded_line(d, (130, 96), (130, 148), (*WHITE, 235), 9)
-    d.ellipse([120, 146, 140, 166], fill=(*SIGNAL, 255))
-    d.ellipse([113, 139, 147, 173], outline=(*SIGNAL, 90), width=3)
+    # Nexfin mark (top left) — "N" as a signal path
+    rounded_line(d, (100, 158), (100, 92), (*WHITE, 235), 9)      # left rail
+    rounded_line(d, (100, 92), (128, 125), (*WHITE, 235), 9)      # diagonal (upper half)
+    rounded_line(d, (128, 125), (156, 158), (*SIGNAL, 220), 9)    # diagonal (lower half)
+    rounded_line(d, (156, 158), (156, 92), (*WHITE, 235), 9)      # right rail
+    d.ellipse([146, 148, 166, 168], fill=(*SIGNAL, 255))          # signal node
+    d.ellipse([139, 141, 173, 175], outline=(*SIGNAL, 90), width=3)
 
     img = Image.alpha_composite(img, fx)
     d = ImageDraw.Draw(img)
@@ -150,7 +151,7 @@ def og_image() -> None:
     draw_tracked(d, (96, 218), "OPEN-SOURCE AI TRADING RESEARCH", f_kicker, SIGNAL, tracking=5)
 
     f_title = font("bold", 108)
-    d.text((92, 246), "Tradient", font=f_title, fill=WHITE)
+    d.text((92, 246), "Nexfin", font=f_title, fill=WHITE)
 
     f_tag = font("bold", 36)
     d.text((96, 392), "Autonomous Intelligence for On-Chain Markets", font=f_tag, fill=FOG)
@@ -182,13 +183,14 @@ def apple_touch_icon() -> None:
     img = Image.new("RGBA", (S, S), (*BASE, 255))
     d = ImageDraw.Draw(img)
 
-    rounded_line(d, (50, 62), (130, 62), (*WHITE, 255), 12)
-    d.ellipse([123, 55, 137, 69], fill=(*SIGNAL, 255))
-    rounded_line(d, (90, 62), (90, 122), (*WHITE, 235), 12)
-    d.ellipse([76, 116, 104, 144], fill=(*SIGNAL, 255))
+    rounded_line(d, (56, 124), (56, 56), (*WHITE, 235), 12)     # left rail
+    rounded_line(d, (56, 56), (90, 90), (*WHITE, 235), 12)      # diagonal (upper half)
+    rounded_line(d, (90, 90), (124, 124), (*SIGNAL, 220), 12)   # diagonal (lower half)
+    rounded_line(d, (124, 124), (124, 56), (*WHITE, 235), 12)   # right rail
+    d.ellipse([110, 110, 138, 138], fill=(*SIGNAL, 255))        # signal node
     ring = Image.new("RGBA", (S, S), (0, 0, 0, 0))
     rd = ImageDraw.Draw(ring)
-    rd.ellipse([68, 108, 112, 152], outline=(*SIGNAL, 90), width=4)
+    rd.ellipse([104, 104, 144, 144], outline=(*SIGNAL, 90), width=4)
     img = Image.alpha_composite(img, ring)
 
     img.convert("RGB").save(os.path.join(PUBLIC, "apple-touch-icon.png"))
