@@ -2,15 +2,10 @@
  * ------------------------------------------------------------------
  * Nexfin — central site configuration
  * ------------------------------------------------------------------
- * This is the ONLY file you need to edit for links and branding.
- *
- * TODO(deploy): replace `your-org` with your GitHub organization or
- * username before deploying. Also update the matching placeholders in
- * index.html (canonical / Open Graph / JSON-LD URLs).
  */
 
 /** GitHub organization or username that owns the repositories. */
-export const GITHUB_ORG = 'your-org'
+export const GITHUB_ORG = 'NexFinAI'
 
 /** Main product repository name. */
 export const GITHUB_REPO = 'nexfin'
