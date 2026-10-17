@@ -131,7 +131,7 @@ export function Projects() {
                       className="inline-flex cursor-default items-center gap-2 rounded-none border border-edge/60 px-4 py-2.5 text-sm font-medium text-mist/60"
                     >
                       <IconLinkedin className="h-4 w-4" />
-                      LinkedIn — soon
+                      LinkedIn
                     </span>
                   )}
                 </div>

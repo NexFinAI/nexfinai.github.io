@@ -27,7 +27,7 @@ export const SITE_URL = `https://${GITHUB_ORG}.github.io`
  * disabled "coming soon" state instead of a dead link.
  * TODO: e.g. 'https://www.linkedin.com/company/nexfinai'
  */
-export const LINKEDIN_URL = ''
+export const LINKEDIN_URL = 'https://www.linkedin.com/company/nexfinai'
 
 /**
  * Contact email or form URL.
