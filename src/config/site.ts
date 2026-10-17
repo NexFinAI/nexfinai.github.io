@@ -10,13 +10,13 @@
  */
 
 /** GitHub organization or username that owns the repositories. */
-export const GITHUB_ORG = 'your-org'
+export const GITHUB_ORG = 'nexfinai'
 
 /** Main repository name. */
 export const GITHUB_REPO = 'nexfinai'
 
 /** Main GitHub repository URL (navbar, hero, footer, CTAs). */
-export const GITHUB_URL = `https://github.com/${GITHUB_ORG}/${GITHUB_REPO}`
+export const GITHUB_URL = `https://github.com/${GITHUB_ORG}/`
 
 /** Canonical site URL (GitHub Pages root site for the org). */
 export const SITE_URL = `https://${GITHUB_ORG}.github.io`
