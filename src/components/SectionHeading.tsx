@@ -1,7 +1,7 @@
 import { cx } from '../lib/cx'
 
 export interface SectionHeadingProps {
-  /** Small mono kicker above the title, e.g. "Product Concept". */
+  /** Small mono kicker above the title, rendered as a code comment. */
   eyebrow: string
   title: string
   description?: string
@@ -11,11 +11,13 @@ export interface SectionHeadingProps {
 export function SectionHeading({ eyebrow, title, description, className }: SectionHeadingProps) {
   return (
     <div className={cx('max-w-3xl', className)}>
-      <p className="flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.28em] text-signal">
-        <span aria-hidden className="h-1.5 w-1.5 rotate-45 bg-signal/80" />
+      <p className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.28em] text-signal">
+        <span aria-hidden className="opacity-60">
+          //
+        </span>
         {eyebrow}
       </p>
-      <h2 className="mt-4 text-balance text-3xl font-semibold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-[2.6rem]">
+      <h2 className="glow-soft mt-4 font-mono text-[1.5rem] font-semibold leading-[1.25] tracking-tight text-white sm:text-[1.85rem] md:text-[2.1rem]">
         {title}
       </h2>
       {description ? (

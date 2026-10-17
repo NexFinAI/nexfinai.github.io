@@ -2,7 +2,7 @@
   <defs>
     <linearGradient id="nx-bar" x1="18" y1="18" x2="46" y2="46" gradientUnits="userSpaceOnUse">
       <stop stop-color="#eef2f7"/>
-      <stop offset="1" stop-color="#3ce0bd"/>
+      <stop offset="1" stop-color="#00ff88"/>
     </linearGradient>
   </defs>
   <rect width="64" height="64" rx="14" fill="#05070a"/>
@@ -10,6 +10,6 @@
   <path d="M18 46V18" stroke="#eef2f7" stroke-width="6" stroke-linecap="round" opacity="0.92"/>
   <path d="M18 18l28 28" stroke="url(#nx-bar)" stroke-width="6" stroke-linecap="round"/>
   <path d="M46 46V18" stroke="#eef2f7" stroke-width="6" stroke-linecap="round" opacity="0.92"/>
-  <circle cx="46" cy="46" r="5.5" fill="#3ce0bd"/>
-  <circle cx="46" cy="46" r="9.75" fill="none" stroke="#3ce0bd" stroke-opacity="0.35" stroke-width="1.5"/>
+  <circle cx="46" cy="46" r="5.5" fill="#00ff88"/>
+  <circle cx="46" cy="46" r="9.75" fill="none" stroke="#00ff88" stroke-opacity="0.35" stroke-width="1.5"/>
 </svg>

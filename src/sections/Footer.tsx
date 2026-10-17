@@ -1,6 +1,6 @@
-import { CONTACT_URL, DOCS_URL, GITHUB_URL, X_URL } from '../config/site'
+import { CONTACT_URL, GITHUB_URL, LINKEDIN_URL, SITE_TAGLINE } from '../config/site'
 import { LogoMark, Wordmark } from '../components/Logo'
-import { IconGithub, IconMail, IconX } from '../components/icons'
+import { IconGithub, IconLinkedin, IconMail } from '../components/icons'
 
 interface FooterLink {
   label: string
@@ -9,24 +9,29 @@ interface FooterLink {
   external?: boolean
 }
 
+const RESEARCH_LINKS: FooterLink[] = [
+  { label: 'Research Areas', href: '#research' },
+  { label: 'Methodology', href: '#methodology' },
+  { label: 'Vision', href: '#vision' },
+  { label: 'Principles', href: '#principles' },
+]
+
 const PROJECT_LINKS: FooterLink[] = [
-  { label: 'Product', href: '#product' },
-  { label: 'Capabilities', href: '#capabilities' },
-  { label: 'Architecture', href: '#research' },
-  { label: 'Roadmap', href: '#roadmap' },
-]
-
-const COMMUNITY_LINKS: FooterLink[] = [
+  { label: 'Open Source', href: '#projects' },
+  { label: 'Publications', href: '#projects' },
   { label: 'GitHub', href: GITHUB_URL, external: true },
-  { label: 'Open Source', href: '#open-source' },
-  { label: 'Become a Contributor', href: GITHUB_URL, external: true },
-  { label: 'X / Twitter', href: X_URL, external: true },
 ]
 
-const RESOURCES_LINKS: FooterLink[] = [
-  { label: 'Documentation', href: DOCS_URL, external: true },
-  { label: 'Contact', href: CONTACT_URL, external: true },
-  { label: 'Back to top', href: '#top' },
+const CONNECT_LINKS: FooterLink[] = [
+  { label: 'Contact', href: '#contact' },
+  { label: 'LinkedIn', href: LINKEDIN_URL, external: true },
+  { label: 'Contact Email', href: CONTACT_URL, external: true },
+]
+
+const DISCLAIMER = [
+  "NexfinAI's research and publications are provided for informational, educational, and research purposes only. Unless explicitly stated otherwise, they do not constitute investment advice, financial advice, or a recommendation to buy or sell any asset.",
+  'Backtested and simulated results have limitations and do not guarantee future performance. Digital asset markets involve substantial risk, and research findings should not be interpreted as evidence of guaranteed profitability.',
+  "The nature and scope of NexfinAI's activities will be described accurately as its research and engineering work develops.",
 ]
 
 function FooterColumn({ title, links }: { title: string; links: FooterLink[] }) {
@@ -45,10 +50,7 @@ function FooterColumn({ title, links }: { title: string; links: FooterLink[] }) 
                 {link.label}
               </a>
             ) : (
-              <span
-                className="cursor-default text-[0.86rem] text-mist/50"
-                title="Coming soon"
-              >
+              <span className="cursor-default text-[0.86rem] text-mist/50" title="Coming soon">
                 {link.label}{' '}
                 <span className="ml-1 font-mono text-[9px] uppercase tracking-[0.18em] text-mist/50">
                   soon
@@ -62,42 +64,6 @@ function FooterColumn({ title, links }: { title: string; links: FooterLink[] }) 
   )
 }
 
-function SocialIcon({
-  label,
-  href,
-  children,
-}: {
-  label: string
-  href: string
-  children: React.ReactNode
-}) {
-  const cls =
-    'inline-flex h-9 w-9 items-center justify-center rounded-md border transition-colors'
-  if (href) {
-    return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={label}
-        className={`${cls} border-edge text-mist hover:border-signal/40 hover:text-white`}
-      >
-        {children}
-      </a>
-    )
-  }
-  return (
-    <span
-      role="img"
-      aria-label={`${label} — coming soon`}
-      title="Coming soon"
-      className={`${cls} cursor-default border-edge/60 text-mist opacity-45`}
-    >
-      {children}
-    </span>
-  )
-}
-
 export function Footer() {
   const year = new Date().getFullYear()
 
@@ -107,35 +73,86 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
           {/* Brand */}
           <div>
-            <a href="#top" className="flex items-center gap-2.5" aria-label="Nexfin — back to top">
+            <a href="#top" className="flex items-center gap-2.5" aria-label="NexfinAI — back to top">
               <LogoMark className="h-7 w-7" />
               <Wordmark />
             </a>
             <p className="mt-4 max-w-xs text-[0.875rem] leading-relaxed text-mist">
-              Autonomous AI agents for on-chain market research, signal discovery, and trading.
+              {SITE_TAGLINE}. Independent research at the intersection of AI, quantitative finance,
+              and digital asset markets.
             </p>
             <div className="mt-5 flex items-center gap-2">
-              <SocialIcon label="GitHub" href={GITHUB_URL}>
+              <a
+                href={GITHUB_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-none border border-edge text-mist transition-colors hover:border-signal/40 hover:text-white"
+              >
                 <IconGithub className="h-[17px] w-[17px]" />
-              </SocialIcon>
-              <SocialIcon label="X / Twitter" href={X_URL}>
-                <IconX className="h-[15px] w-[15px]" />
-              </SocialIcon>
-              <SocialIcon label="Contact" href={CONTACT_URL}>
-                <IconMail className="h-[17px] w-[17px]" />
-              </SocialIcon>
+              </a>
+              {LINKEDIN_URL ? (
+                <a
+                  href={LINKEDIN_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-none border border-edge text-mist transition-colors hover:border-signal/40 hover:text-white"
+                >
+                  <IconLinkedin className="h-[16px] w-[16px]" />
+                </a>
+              ) : (
+                <span
+                  role="img"
+                  aria-label="LinkedIn — coming soon"
+                  title="Coming soon"
+                  className="inline-flex h-9 w-9 cursor-default items-center justify-center rounded-none border border-edge/60 text-mist opacity-45"
+                >
+                  <IconLinkedin className="h-[16px] w-[16px]" />
+                </span>
+              )}
+              {CONTACT_URL ? (
+                <a
+                  href={CONTACT_URL}
+                  aria-label="Contact email"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-none border border-edge text-mist transition-colors hover:border-signal/40 hover:text-white"
+                >
+                  <IconMail className="h-[17px] w-[17px]" />
+                </a>
+              ) : (
+                <span
+                  role="img"
+                  aria-label="Contact email — coming soon"
+                  title="Coming soon"
+                  className="inline-flex h-9 w-9 cursor-default items-center justify-center rounded-none border border-edge/60 text-mist opacity-45"
+                >
+                  <IconMail className="h-[17px] w-[17px]" />
+                </span>
+              )}
             </div>
           </div>
 
-          <FooterColumn title="Project" links={PROJECT_LINKS} />
-          <FooterColumn title="Community" links={COMMUNITY_LINKS} />
-          <FooterColumn title="Resources" links={RESOURCES_LINKS} />
+          <FooterColumn title="Research" links={RESEARCH_LINKS} />
+          <FooterColumn title="Projects" links={PROJECT_LINKS} />
+          <FooterColumn title="Connect" links={CONNECT_LINKS} />
         </div>
 
-        <div className="mt-12 flex flex-col gap-3 border-t border-edge/60 pt-6 md:flex-row md:items-center md:justify-between">
-          <p className="text-[11.5px] text-mist">© {year} Nexfin. Built in the open.</p>
+        {/* Disclaimer */}
+        <div className="mt-12 space-y-2.5 border-t border-edge/60 pt-6">
+          <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-mist">Disclaimer</p>
+          {DISCLAIMER.map((paragraph) => (
+            <p key={paragraph.slice(0, 24)} className="max-w-4xl text-[11.5px] leading-relaxed text-mist/70">
+              {paragraph}
+            </p>
+          ))}
+        </div>
+
+        <div className="mt-8 flex flex-col gap-3 border-t border-edge/60 pt-6 md:flex-row md:items-center md:justify-between">
+          <p className="text-[11.5px] text-mist">
+            © {year} NexfinAI. Independent research &amp; engineering initiative.
+          </p>
           <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-mist/70">
-            Early-stage project · Not financial advice · No performance claims
+            Research &amp; informational purposes only · Not investment advice
           </p>
         </div>
       </div>

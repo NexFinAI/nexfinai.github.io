@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react'
 import { cx } from '../lib/cx'
-import { DOCS_URL, GITHUB_URL } from '../config/site'
+import { GITHUB_URL } from '../config/site'
 import { LogoMark, Wordmark } from '../components/Logo'
 import { ButtonLink } from '../components/Button'
-import { IconClose, IconExternal, IconGithub, IconMenu } from '../components/icons'
+import { IconClose, IconGithub, IconMenu } from '../components/icons'
 
 const NAV_LINKS = [
-  { label: 'Product', href: '#product' },
+  { label: 'About', href: '#about' },
   { label: 'Research', href: '#research' },
-  { label: 'Open Source', href: '#open-source' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Contact', href: '#contact' },
 ] as const
 
 const SECTION_IDS = NAV_LINKS.map((l) => l.href.slice(1))
@@ -68,7 +69,7 @@ export function Navbar() {
         aria-label="Main"
         className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 md:h-[72px] md:px-8"
       >
-        <a href="#top" className="flex items-center gap-2.5" aria-label="Nexfin — back to top">
+        <a href="#top" className="flex items-center gap-2.5" aria-label="NexfinAI — back to top">
           <LogoMark className="h-7 w-7" />
           <Wordmark />
         </a>
@@ -80,7 +81,7 @@ export function Navbar() {
               key={link.href}
               href={link.href}
               className={cx(
-                'rounded-md px-3 py-2 text-[0.86rem] font-medium transition-colors',
+                'rounded-none px-3 py-2 font-mono text-[11px] uppercase tracking-[0.18em] transition-colors',
                 active === link.href.slice(1) ? 'text-white' : 'text-mist hover:text-white',
               )}
             >
@@ -94,24 +95,15 @@ export function Navbar() {
             href={GITHUB_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-md px-3 py-2 text-[0.86rem] font-medium text-mist transition-colors hover:text-white"
+            className="inline-flex items-center gap-1.5 rounded-none px-3 py-2 text-[0.86rem] font-medium text-mist transition-colors hover:text-white"
           >
             <IconGithub className="h-4 w-4" />
             GitHub
           </a>
-          <a
-            href={DOCS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-md px-3 py-2 text-[0.86rem] font-medium text-mist transition-colors hover:text-white"
-          >
-            Docs
-            <IconExternal className="h-3.5 w-3.5 opacity-70" />
-          </a>
         </div>
 
         <div className="hidden md:block">
-          <ButtonLink href="#open-source">Join the Project</ButtonLink>
+          <ButtonLink href="#contact">Get in Touch</ButtonLink>
         </div>
 
         {/* Mobile toggle */}
@@ -121,7 +113,7 @@ export function Navbar() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? 'Close menu' : 'Open menu'}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-edge text-fog transition-colors hover:text-white md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-none border border-edge text-fog transition-colors hover:text-white md:hidden"
         >
           {open ? <IconClose className="h-5 w-5" /> : <IconMenu className="h-5 w-5" />}
         </button>
@@ -129,17 +121,14 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {open ? (
-        <div
-          id="mobile-menu"
-          className="border-b border-edge bg-base/95 backdrop-blur-xl md:hidden"
-        >
+        <div id="mobile-menu" className="border-b border-edge bg-base/95 backdrop-blur-xl md:hidden">
           <div className="space-y-1 px-5 py-4">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="block rounded-md px-3 py-2.5 text-[0.95rem] font-medium text-fog transition-colors hover:bg-white/[0.04] hover:text-white"
+                className="block rounded-none px-3 py-2.5 font-mono text-[12px] uppercase tracking-[0.16em] text-fog transition-colors hover:bg-signal/[0.06] hover:text-signal"
               >
                 {link.label}
               </a>
@@ -149,26 +138,13 @@ export function Navbar() {
               href={GITHUB_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-md px-3 py-2.5 text-[0.95rem] font-medium text-fog transition-colors hover:bg-white/[0.04] hover:text-white"
+              className="flex items-center gap-2 rounded-none px-3 py-2.5 text-[0.95rem] font-medium text-fog transition-colors hover:bg-white/[0.04] hover:text-white"
             >
               <IconGithub className="h-4 w-4" />
               GitHub
             </a>
-            <a
-              href={DOCS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-md px-3 py-2.5 text-[0.95rem] font-medium text-fog transition-colors hover:bg-white/[0.04] hover:text-white"
-            >
-              Docs
-              <IconExternal className="h-3.5 w-3.5 opacity-70" />
-            </a>
-            <ButtonLink
-              href="#open-source"
-              className="mt-2 w-full"
-              onClick={() => setOpen(false)}
-            >
-              Join the Project
+            <ButtonLink href="#contact" className="mt-2 w-full" onClick={() => setOpen(false)}>
+              Get in Touch
             </ButtonLink>
           </div>
         </div>

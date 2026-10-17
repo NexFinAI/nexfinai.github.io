@@ -27,7 +27,7 @@ export function ScrollProgress() {
     <div aria-hidden className="fixed inset-x-0 top-0 z-[60] h-[2px]">
       <div
         ref={barRef}
-        className="h-full w-0 bg-gradient-to-r from-signal/30 via-signal to-signal/60 shadow-[0_0_10px_rgba(60,224,189,0.8)]"
+        className="h-full w-0 bg-gradient-to-r from-signal/30 via-signal to-signal/60 shadow-[0_0_10px_rgba(0,255,136,0.8)]"
       />
     </div>
   )

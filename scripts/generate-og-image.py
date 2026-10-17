@@ -19,12 +19,12 @@ import os
 from PIL import Image, ImageDraw, ImageFont
 
 # ---------------------------------------------------------------- palette
-BASE = (5, 7, 10)
-WHITE = (238, 242, 247)
-FOG = (198, 205, 216)
-MIST = (150, 160, 176)
-SIGNAL = (60, 224, 189)
-LINE = (148, 163, 184)
+BASE = (2, 6, 4)
+WHITE = (232, 247, 238)
+FOG = (190, 214, 200)
+MIST = (140, 168, 152)
+SIGNAL = (0, 255, 136)
+LINE = (120, 165, 142)
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PUBLIC = os.path.normpath(os.path.join(HERE, "..", "public"))
@@ -148,21 +148,21 @@ def og_image() -> None:
 
     # typography
     f_kicker = font("mono-bold", 21)
-    draw_tracked(d, (96, 218), "OPEN-SOURCE AI TRADING RESEARCH", f_kicker, SIGNAL, tracking=5)
+    draw_tracked(d, (96, 218), "AI-POWERED QUANTITATIVE RESEARCH", f_kicker, SIGNAL, tracking=5)
 
     f_title = font("bold", 108)
-    d.text((92, 246), "Nexfin", font=f_title, fill=WHITE)
+    d.text((92, 246), "NexfinAI", font=f_title, fill=WHITE)
 
     f_tag = font("bold", 36)
-    d.text((96, 392), "Autonomous Intelligence for On-Chain Markets", font=f_tag, fill=FOG)
+    d.text((96, 392), "Intelligence for the Next Era of Finance", font=f_tag, fill=FOG)
 
     f_desc = font("regular", 23)
-    d.text((96, 452), "AI agents that research on-chain markets, discover trading signals,",
+    d.text((96, 452), "AI-powered quantitative research, crypto and DeFi analytics, and",
            font=f_desc, fill=MIST)
-    d.text((96, 484), "and execute crypto strategies.", font=f_desc, fill=MIST)
+    d.text((96, 484), "systematic trading systems — open-source and reproducible.", font=f_desc, fill=MIST)
 
     # status pill (bottom left) — drawn on its own layer so alpha blends
-    pill_text = "EARLY STAGE · BUILDING IN PUBLIC"
+    pill_text = "INDEPENDENT RESEARCH INITIATIVE"
     f_pill = font("mono-bold", 18)
     pw = tracked_width(pill_text, f_pill, tracking=3)
     px0, py0, px1, py1 = 96, 540, int(96 + pw + 44), 586
